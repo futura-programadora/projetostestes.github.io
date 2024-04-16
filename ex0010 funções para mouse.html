@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos DOM</title>
+    <style>/*criar uma personalização da aparencia*/
+        div#area { 
+            font: normal 15pt arial;/*tamanho, tipo da letra*/
+            background-color: aqua;/*cor da area da div*/
+            color: rgb(1, 11, 7);/*cor da font*/
+            width: 200px;/*largura*/
+            height: 200px;/*altura*/
+            line-height: 200px;/*centralizar na linha do meio*/
+            text-align: center;/*colocar o texto no centro de tudo*/
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        interaja...
+    </div>
+
+    <script>
+        var click = window.document.getElementById("area");//variavel click que recebe a ordem de mudar a div com id especifico
+        click.addEventListener('click' , clicar)// função que ocorre apos clicar
+        click.addEventListener('mouseenter' , entrar)//função que ocorre apos colocar o mouse em cima
+        click.addEventListener('mouseout' , sair)//função que ocorre apos tirar o mouse
+
+        function clicar() {//função a ser executada
+            click.innerHTML = 'clicou!'
+            click.style.background = 'red'//interfere na cor da div após a ação 
+        }
+        function entrar() {//função, obs:sempre criar uma nova função fora da chave {}
+            click.innerHTML = 'entrou!'
+            click.style.background = 'green'
+        }
+        function sair() {
+            click.innerHTML = 'saiu!'
+            click.style.background = 'green'
+        }
+    </script>
+</body>
+</html>
